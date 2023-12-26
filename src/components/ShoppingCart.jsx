@@ -10,11 +10,10 @@ import "../styles/ShoppingCart.css";
 function ShoppingCart() {
   const productsInShoppingCart = useSelector((state) => state.navbarReducer.value); // productsInShoppingCart is an array
 
-  // Sepetteki ürünlerin fiyatlarının toplamını hesaplama
   function calculateTotalPrice() {
     let totalPrice = 0;
     for (let i = 0; i < productsInShoppingCart.length; i++) {
-      totalPrice += productsInShoppingCart[i].price * productsInShoppingCart[i].quantity; // Her ürünü adedi ile çarparak toplam fiyatı hesaplama
+      totalPrice = totalPrice  + productsInShoppingCart[i].price * productsInShoppingCart[i].quantity; 
     }
     return totalPrice;
   }

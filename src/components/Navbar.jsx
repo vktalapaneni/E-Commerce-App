@@ -2,7 +2,12 @@ import React from "react";
 import { BsHandbag } from 'react-icons/bs';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { TbBrandHexo } from 'react-icons/tb';
+import { MdHome } from 'react-icons/md';
+import { FaShoppingCart } from 'react-icons/fa';
+
+
+
+
 
 import "../styles/Navbar.css";
 
@@ -10,7 +15,7 @@ function Navbar() {
 
     const products = useSelector(state => state.navbarReducer.value); // products is an array
 
-    // Sepetteki toplam ürün sayısını hesaplama (navbarda göstermek için)
+    
     function numberOfProducts() {
         let number = 0;
         for (let i = 0; i < products.length; i++) {
@@ -33,8 +38,8 @@ function Navbar() {
 
     return (
         <div id="navbar-container">
-            <div id="icon"><TbBrandHexo id="icon-in-div" onClick={handleClickIcon} /></div>
-            <BsHandbag id="hand-bag" onClick={handleClickHandBag} />
+            <div id="icon"><MdHome id="icon-in-div" onClick={handleClickIcon} /></div>
+            <FaShoppingCart id="hand-bag" onClick={handleClickHandBag} />
             <div id="number-of-products">{numberOfProducts()}</div>
         </div>
     )

@@ -1,12 +1,7 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector  } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { PiShoppingCart } from "react-icons/pi";
-import { add } from "../redux/features/navbar/navbarSlice";
-
-// Component
 import Hero from "./Hero";
-
 import "../styles/Products.css";
 
 function Products() {
@@ -15,7 +10,7 @@ function Products() {
 
     const navigate = useNavigate();
 
-    const dispatch = useDispatch();
+    
 
     return (
         <>
@@ -24,26 +19,25 @@ function Products() {
             <h1>PRODUCTS</h1>
 
             <div id="flex-container">
-                {products.length > 0 && products.map((eachProduct, index) => {
+                {products.length > 0 && products.map((Product, index) => {
                     return (
                         <div id="flex-item" key={index}>
 
                             <div id="product-head">
-                                <img onClick={() => navigate(`/details/${eachProduct.id}`)}
-                                    src={eachProduct.thumbnail} // thumbnail: küçük resim
-                                    alt={eachProduct.id + " image"}>
+                                <img onClick={() => navigate(`/details/${Product.id}`)}
+                                    src={Product.thumbnail}
+                                    alt={Product.id + " image"}>
                                 </img>
 
-                                <h2>{eachProduct.title}</h2>
+                                <h2>{Product.title}</h2>
                             </div>
 
                             <div id="product-info">
                                 <h2>
                                     <span id="dolar-span">$</span>
-                                    {eachProduct.price}
+                                    {Product.price}
                                 </h2>
 
-                                <PiShoppingCart id="shopping-cart" onClick={() => dispatch(add(eachProduct))} /> {/* sepete ekleme işlemi */}
                             </div>
                         </div>
                     );

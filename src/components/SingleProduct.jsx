@@ -6,7 +6,7 @@ import "../styles/SingleProduct.css";
 
 function SingleProduct(props) {
 
-    // console.log(props.productDetails);
+    
 
     const dispatch = useDispatch();
 

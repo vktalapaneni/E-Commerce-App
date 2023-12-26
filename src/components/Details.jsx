@@ -6,14 +6,11 @@ import { getDetails } from "../redux/features/details/detailsSlice";
 
 function Details() {
 
-    const params = useParams(); // Products.jsx' ten navigate ile geleni burada karşılıyoruz.
+    const params = useParams(); 
 
-    // console.log(params); // returns an object such as {id: '3'}
-    // console.log(params.id); // returns 3 (depends on params)
 
     const dispatch = useDispatch();
 
-    // Sayfa yüklendiğinde gelen id' ye göre ürün çekilecek.
     useEffect(() => {
         dispatch(getDetails(params.id));
     }, [dispatch, params.id]);
@@ -25,7 +22,6 @@ function Details() {
     return (
         <div>
             <h1 id="details-heading">DETAILS</h1>
-
             {loading ? <div style={{ textAlign: "center", marginTop: "200px" }}>Loading...</div> : <SingleProduct productDetails={productDetails} />}
 
         </div>

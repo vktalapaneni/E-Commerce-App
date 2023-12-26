@@ -3,12 +3,9 @@
 }
 
 #single-cart-container {
-    display: flex;
-
-    /* to center the div */
+    display: flex;  
     width: 60%;
     margin-left: 20%;
-
     box-shadow: 0 0 2px 0 #252B48;
     border-radius: 10px;
     margin-bottom: 0.7rem;
